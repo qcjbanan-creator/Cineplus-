@@ -8,13 +8,13 @@
 </head>
 <body class="subpage-body">
 
-    <!-- Floating Top Navigation Pill Bar -->
     <header class="floating-nav-container">
         <nav class="pill-nav">
             <a href="index.html" class="nav-item">Home</a>
             <a href="movies.html" class="nav-item">Movies</a>
             <a href="food.html" class="nav-item">Food & Bundles</a>
             <a href="booking.html" class="nav-item active">Booking & Cart</a>
+            <a href="info.html" class="nav-item">Info</a>
             <a href="developers.html" class="nav-item">Developers</a>
             
             <div class="nav-icons">
@@ -26,100 +26,71 @@
 
     <main class="page-container">
         <div class="page-header">
-            <h2>Ticket Reservation & Cart Summary</h2>
-            <p>Review your selected tickets, snack bundles, and complete your booking details.</p>
+            <h2>Ticketing Cart & Reservation</h2>
+            <p>Adjust ticket quantities, choose seats, or append custom requests below.</p>
         </div>
 
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Item / Movie / Snack</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="text-align:center;"><input type="checkbox" checked></td>
-                    <td>Avengers: Endgame (Ticket)</td>
-                    <td><input type="number" value="2" min="1" max="10" class="qty-input"></td>
-                    <td class="price">PHP 500.00</td>
-                </tr>
-                <tr>
-                    <td style="text-align:center;"><input type="checkbox" checked></td>
-                    <td>Solo Combo (Popcorn + Drink)</td>
-                    <td><input type="number" value="1" min="1" max="5" class="qty-input"></td>
-                    <td class="price">PHP 120.00</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <section class="form-box">
-            <h3>Customer & Discount Details</h3>
-            <form action="#" method="post" style="margin-top: 15px;">
-                <div class="form-group">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        <div style="max-width: 800px; margin: 0 auto 50px auto;">
+            <!-- Interactive Seat Selection Module -->
+            <div style="background: #0a0a0a; border: 1px solid #333; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+                <h3 style="color: #FFD700; margin-bottom: 15px;">Select Your Theater Seats</h3>
+                <div style="background: #222; color: #FFD700; padding: 6px; border-radius: 4px; margin-bottom: 25px; font-weight: bold; letter-spacing: 2px; font-size: 0.85rem;">
+                    CINEMA SCREEN SIDE 🎬
                 </div>
+                <div id="seat-grid" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; max-width: 400px; margin: 0 auto 20px auto;"></div>
+            </div>
 
-                <div class="form-group">
-                    <label for="showtime">Select Showtime:</label>
-                    <select id="showtime" name="showtime">
-                        <option value="12pm">12:00 PM Matinee</option>
-                        <option value="430pm">4:30 PM Prime Time</option>
-                        <option value="8pm">8:00 PM Evening</option>
-                    </select>
-                </div>
+            <!-- Reservation Cart -->
+            <div style="background: #0a0a0a; border: 1px solid #333; padding: 30px; border-radius: 12px;">
+                <h3 style="color: #FFD700; margin-bottom: 20px;">Your Reservation Cart</h3>
+                
+                <div id="cart-items-container"></div>
 
-                <div class="form-group">
-                    <label>Discount Type:</label>
-                    <div style="margin-top: 5px;">
-                        <input type="radio" id="none" name="discount" value="none" checked> <label for="none" style="display:inline; margin-right: 15px;">No Discount</label>
-                        <input type="radio" id="student" name="discount" value="student"> <label for="student" style="display:inline; margin-right: 15px;">Student (10%)</label>
-                        <input type="radio" id="senior" name="discount" value="senior"> <label for="senior" style="display:inline;">Senior / PWD (20%)</label>
+                <!-- Custom Request Input inside Cart -->
+                <div style="margin: 20px 0; padding: 15px; background: #151515; border-radius: 8px;">
+                    <label style="color: #fff; font-size: 0.9rem; display: block; margin-bottom: 8px;">Add Custom Note / Special Request to Order:</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="custom-item-text" placeholder="e.g. Birthday Celebration Note, Extra Sauce" style="flex: 1; padding: 8px 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px;">
+                        <button onclick="addCustomTextItem()" style="background: #4ecca3; color: #000; font-weight: bold; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer;">Add Note</button>
                     </div>
                 </div>
 
-                <div class="form-group geo-box">
-                    <label>Branch Locator & Geolocation:</label>
-                    <p style="font-size:0.85rem; color:#aaa; margin-top: 4px;">Tag your location to find the nearest Cineplus branch.</p>
-                    <button type="button" onclick="getGeoLocation()" class="btn-accent">Get My Coordinates</button>
-                    <p id="geo-result" style="margin-top:10px; color:#FFD700; font-weight:bold;"></p>
+                <!-- Split Discount Selector -->
+                <div style="margin: 20px 0; padding: 15px; background: #151515; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <label style="color: #fff; font-weight: 500;">Select Privilege Discount:</label>
+                    <select id="discount-selector" style="background: #222; color: #fff; border: 1px solid #444; padding: 8px 12px; border-radius: 6px;">
+                        <option value="0">Regular Price (0% Off)</option>
+                        <option value="0.10">Student Privilege (10% Off)</option>
+                        <option value="0.20">Senior Citizen / PWD Privilege (20% Off)</option>
+                    </select>
                 </div>
 
-                <div class="form-group">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms" style="display:inline; font-size: 0.9rem;"> I agree to cinema booking rules and seat policies</label>
+                <div style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 8px;">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">PHP 0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #4ecca3; margin-bottom: 8px;">
+                        <span>Discount Applied:</span>
+                        <span id="cart-discount-amount">PHP 0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #FFD700; font-size: 1.25rem; font-weight: bold; margin-top: 10px;">
+                        <span>Final Total:</span>
+                        <span id="cart-final-total">PHP 0.00</span>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn-submit">Proceed to Payment</button>
-            </form>
-        </section>
+                <button onclick="alert('Reservation Confirmed! Thank you for choosing Cineplus+.')" style="width: 100%; margin-top: 25px; background: #FFD700; color: #000; border: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 1.05rem; cursor: pointer;">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
     </main>
 
-    <script>
-        function getGeoLocation() {
-            const output = document.getElementById("geo-result");
-            if (navigator.geolocation) {
-                output.innerText = "Locating position...";
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        output.innerText = `Latitude: ${position.coords.latitude.toFixed(4)}° | Longitude: ${position.coords.longitude.toFixed(4)}° (Nearest Branch Located)`;
-                    },
-                    (error) => {
-                        output.innerText = "Permission denied or geolocation unavailable.";
-                    }
-                );
-            } else {
-                output.innerText = "Geolocation is not supported by this browser.";
-            }
-        }
-    </script>
-
     <footer class="subpage-footer">
-        <p>&copy; 2026 Cineplus+. All Rights Reserved.</p>
+        <p>&copy; 2026 Cineplus. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
