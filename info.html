@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineplus+ | Information & Platform Details</title>
+    <title>Cineplus | Info & Branch Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="subpage-body">
 
-    <!-- Floating Top Navigation Pill Bar -->
     <header class="floating-nav-container">
         <nav class="pill-nav">
             <a href="index.html" class="nav-item">Home</a>
             <a href="movies.html" class="nav-item">Movies</a>
+            <a href="food.html" class="nav-item">Food & Bundles</a>
             <a href="booking.html" class="nav-item">Booking & Cart</a>
             <a href="info.html" class="nav-item active">Info</a>
             <a href="developers.html" class="nav-item">Developers</a>
@@ -25,103 +25,29 @@
     </header>
 
     <main class="page-container">
-        <!-- Page Header -->
-        <div class="page-header" style="text-align: center; margin-bottom: 40px;">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;">
-                <img src="media/logo.png" alt="Cineplus+ Logo" style="height: 50px; width: auto;">
-                <h1 style="color: #FFD700; font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; margin: 0;">CINEPLUS+</h1>
-            </div>
-            <p style="color: #aaaaaa; max-width: 700px; margin: 0 auto;">
-                An integrated local cinema management and web ticketing engine engineered for seamless movie selection, concession ordering, automated discounts, and branch detection.
-            </p>
+        <div class="page-header">
+            <h2>Theater Branches & Information Hub</h2>
+            <p>Locate your nearest Cineplus+ theater branch and review our house policies.</p>
         </div>
 
-        <!-- System Architecture & Purpose Section -->
-        <section class="info-section">
-            <h2 class="section-title">🍿 Purpose of the Platform</h2>
-            <p class="info-text">
-                <strong>Cineplus+</strong> bridges high-performance core C++ console logic with a modern, streaming-grade web front-end. Designed to streamline local theater reservations, Cineplus+ eliminates long queues by providing an all-in-one digital solution for reserving seats, selecting screening slots, and customizing concession orders.
-            </p>
-        </section>
-
-        <!-- Key Features Grid -->
-        <div class="info-grid">
-            
-            <!-- Feature 1: Ticketing System -->
-            <article class="info-card">
-                <div class="card-icon">🎟️</div>
-                <h3>Automated Ticketing Engine</h3>
-                <p>
-                    Select movie titles, preferred screening schedules (12:00 PM Matinee, 4:30 PM Prime, 8:00 PM Evening), and dedicated auditorium seating (Seats #01 through #18) with real-time seat tracking.
-                </p>
-            </article>
-
-            <!-- Feature 2: Movie Selection & Pricing -->
-            <article class="info-card">
-                <div class="card-icon">🎬</div>
-                <h3>Curated Movie Catalog & Transparent Pricing</h3>
-                <p>
-                    Browse blockbuster titles, detailed synopses, and fixed ticket rates (ranging from <strong>PHP 220.00 to PHP 250.00</strong>). Complete itemized breakdown gives full transparency before checkout.
-                </p>
-            </article>
-
-            <!-- Feature 3: Concessions & Food Bundles -->
-            <article class="info-card">
-                <div class="card-icon">🍿</div>
-                <h3>Cinema Concessions & Food Bundles</h3>
-                <p>
-                    Add individual theater snacks (Regular Popcorn, Bottled Soda, Hotdog Sandwiches) or cost-effective family snack packages (Solo Combo, Pair Combo, Family Bundle) directly to your booking cart.
-                </p>
-            </article>
-
-            <!-- Feature 4: Discounts -->
-            <article class="info-card">
-                <div class="card-icon">🏷️</div>
-                <h3>Automated Discount Module</h3>
-                <p>
-                    Instant eligibility discounts applied at checkout:
-                </p>
-                <ul class="info-list">
-                    <li><strong>Student Rate:</strong> 10% discount on total booking</li>
-                    <li><strong>Senior Citizen / PWD Rate:</strong> 20% mandatory discount</li>
-                    <li><strong>Regular Rate:</strong> Standard billing without surcharge</li>
-                </ul>
-            </article>
-
-            <!-- Feature 5: Geolocation -->
-            <article class="info-card">
-                <div class="card-icon">📍</div>
-                <h3>Geolocation & Branch Detection</h3>
-                <p>
-                    Integrated browser API tags your exact geographic coordinates (Latitude & Longitude) to automatically match and route your reservation to the nearest physical Cineplus+ theater branch.
-                </p>
-            </article>
-
-            <!-- Feature 6: C++ Engine Integration -->
-            <article class="info-card">
-                <div class="card-icon">💻</div>
-                <h3>C++ Backend Foundation</h3>
-                <p>
-                    Backed by underlying Object-Oriented C++ logic utilizing arrays, functions, structures, and memory-efficient algorithms to process ticket inventory, order calculations, and data persistence.
-                </p>
-            </article>
-
-        </div>
-
-        <!-- Quick Navigation Bar Section -->
-        <section class="info-action-banner">
-            <h3>Ready to Experience Cineplus+?</h3>
-            <p style="color: #bbb; margin: 8px 0 20px 0;">Reserve your seats or explore our complete 30-item catalog now.</p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="movies.html" class="btn btn-play" style="padding: 12px 28px;">Explore Movie Catalog</a>
-                <a href="booking.html" class="btn btn-info" style="padding: 12px 28px;">Book Seats Now</a>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
+            <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
+                <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Quezon City Flagship</h3>
+                <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Equipped with IMAX screens, Dolby Atmos surround sound, and VIP recliner seating.</p>
+                <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
             </div>
-        </section>
+            <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
+                <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Rizal Branch</h3>
+                <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Featuring laser projection theaters and private screening suites.</p>
+                <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
+            </div>
+        </div>
     </main>
 
     <footer class="subpage-footer">
-        <p>&copy; 2026 Cineplus+. All Rights Reserved.</p>
+        <p>&copy; 2026 Cineplus. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
