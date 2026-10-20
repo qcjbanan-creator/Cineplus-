@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineplus+ | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Top Navigation Pill Bar -->
+    <header class="floating-nav-container">
+        <nav class="pill-nav">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="movies.html" class="nav-item">Movies</a>
+            <a href="food.html" class="nav-item">Food & Bundles</a>
+            <a href="booking.html" class="nav-item">Booking & Cart</a>
+            <a href="info.html" class="nav-item">Info</a>
+            <a href="developers.html" class="nav-item">Developers</a>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" title="Search">🔍</button>
+                <button class="icon-btn" title="Profile">👤</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full-Screen Hero Media Section -->
+    <main class="hero-container">
+        <!-- Hero Background Video -->
+        <video id="bgVideo" class="hero-video" autoplay loop muted playsinline poster="images/trailer-poster.jpg">
+            <source src="media/promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark Gradient Vignette Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- On-Screen Cineplus Logo Branding & Action Controls -->
+        <div class="hero-content">
+            <div class="brand-title-container">
+                <img src="media/logo.png" alt="Cineplus Logo" class="brand-logo-img">
+                <h1 class="movie-title">CINEPLUS+</h1>
+            </div>
+            
+            <div class="action-buttons">
+                <!-- Play/Pause Video Toggle -->
+                <button id="playBtn" class="btn btn-play" onclick="togglePlay()">
+                    <span id="playBtnIcon" class="btn-icon">⏸</span> <span id="playBtnText">Pause</span>
+                </button>
+                <!-- Link to Info HTML page -->
+                <a href="info.html" class="btn btn-info">
+                    <span class="btn-icon">ℹ</span> Info
+                </a>
+                <!-- Audio Soundscape Toggle -->
+                <button id="soundBtn" class="btn btn-circle" title="Toggle Sound" onclick="toggleAudio()">🔇</button>
+            </div>
+        </div>
+
+        <!-- Bottom Banner Indicator -->
+        <div class="bottom-scroll">
+            <a href="movies.html" class="bottom-cta-banner">
+                Watch your favorite movies and book your seats now! <span class="arrow-icon">➔</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Interactive Video & Audio Control Script -->
+    <script>
+        const video = document.getElementById('bgVideo');
+        const playBtnText = document.getElementById('playBtnText');
+        const playBtnIcon = document.getElementById('playBtnIcon');
+        const soundBtn = document.getElementById('soundBtn');
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                playBtnText.innerText = "Pause";
+                playBtnIcon.innerText = "⏸";
+            } else {
+                video.pause();
+                playBtnText.innerText = "Play";
+                playBtnIcon.innerText = "▶";
+            }
+        }
+
+        function toggleAudio() {
+            if (video.muted) {
+                video.muted = false;
+                soundBtn.innerText = "🔊";
+            } else {
+                video.muted = true;
+                soundBtn.innerText = "🔇";
+            }
+        }
+    </script>
+
+</body>
+</html>

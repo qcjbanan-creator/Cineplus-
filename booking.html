@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineplus | Booking & Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage-body">
+
+    <!-- Floating Top Navigation Pill Bar -->
+    <header class="floating-nav-container">
+        <nav class="pill-nav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="movies.html" class="nav-item">Movies</a>
+            <a href="food.html" class="nav-item">Food & Bundles</a>
+            <a href="booking.html" class="nav-item active">Booking & Cart</a>
+            <a href="developers.html" class="nav-item">Developers</a>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" title="Search">🔍</button>
+                <button class="icon-btn" title="Profile">👤</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h2>Ticket Reservation & Cart Summary</h2>
+            <p>Review your selected tickets, snack bundles, and complete your booking details.</p>
+        </div>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Item / Movie / Snack</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:center;"><input type="checkbox" checked></td>
+                    <td>Avengers: Endgame (Ticket)</td>
+                    <td><input type="number" value="2" min="1" max="10" class="qty-input"></td>
+                    <td class="price">PHP 500.00</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;"><input type="checkbox" checked></td>
+                    <td>Solo Combo (Popcorn + Drink)</td>
+                    <td><input type="number" value="1" min="1" max="5" class="qty-input"></td>
+                    <td class="price">PHP 120.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="form-box">
+            <h3>Customer & Discount Details</h3>
+            <form action="#" method="post" style="margin-top: 15px;">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="showtime">Select Showtime:</label>
+                    <select id="showtime" name="showtime">
+                        <option value="12pm">12:00 PM Matinee</option>
+                        <option value="430pm">4:30 PM Prime Time</option>
+                        <option value="8pm">8:00 PM Evening</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Discount Type:</label>
+                    <div style="margin-top: 5px;">
+                        <input type="radio" id="none" name="discount" value="none" checked> <label for="none" style="display:inline; margin-right: 15px;">No Discount</label>
+                        <input type="radio" id="student" name="discount" value="student"> <label for="student" style="display:inline; margin-right: 15px;">Student (10%)</label>
+                        <input type="radio" id="senior" name="discount" value="senior"> <label for="senior" style="display:inline;">Senior / PWD (20%)</label>
+                    </div>
+                </div>
+
+                <div class="form-group geo-box">
+                    <label>Branch Locator & Geolocation:</label>
+                    <p style="font-size:0.85rem; color:#aaa; margin-top: 4px;">Tag your location to find the nearest Cineplus branch.</p>
+                    <button type="button" onclick="getGeoLocation()" class="btn-accent">Get My Coordinates</button>
+                    <p id="geo-result" style="margin-top:10px; color:#FFD700; font-weight:bold;"></p>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" style="display:inline; font-size: 0.9rem;"> I agree to cinema booking rules and seat policies</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Proceed to Payment</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function getGeoLocation() {
+            const output = document.getElementById("geo-result");
+            if (navigator.geolocation) {
+                output.innerText = "Locating position...";
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        output.innerText = `Latitude: ${position.coords.latitude.toFixed(4)}° | Longitude: ${position.coords.longitude.toFixed(4)}° (Nearest Branch Located)`;
+                    },
+                    (error) => {
+                        output.innerText = "Permission denied or geolocation unavailable.";
+                    }
+                );
+            } else {
+                output.innerText = "Geolocation is not supported by this browser.";
+            }
+        }
+    </script>
+
+    <footer class="subpage-footer">
+        <p>&copy; 2026 Cineplus+. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
