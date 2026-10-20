@@ -451,4 +451,15 @@ body {
 .bottom-cta-banner:hover .arrow-icon {
     transform: translateX(4px);
 }
-
+/* Brand Logo & Text pinned to the left */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: rgba(17, 17, 17, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid #333333;
+    padding: 8px 18px;
+    border-radius: 50px;
+}
