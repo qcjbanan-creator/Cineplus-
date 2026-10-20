@@ -1,5 +1,6 @@
-// Cineplus+ Full Interactive Engine (Cart, Quantities, Custom Items, Seats, Modals, Geolocation & Invoice Checkout)
+// Cineplus+ Full Interactive Engine (Cart, Quantities, Custom Items, Seats, Search & Profile Modals, Geolocation & Invoice Checkout)
 
+// 1. Cart Management & Local Storage Sync
 function selectAndBook(name, price, type, qtyId = null, checkboxId = null) {
     if (checkboxId) {
         let chk = document.getElementById(checkboxId);
@@ -125,7 +126,7 @@ function loadCartSummary() {
     if (totalElem) totalElem.innerText = `PHP ${finalTotal.toFixed(2)}`;
 }
 
-// Checkout Trigger Handler
+// 2. Checkout & Invoice Generator Trigger
 function proceedToCheckout() {
     let cart = JSON.parse(localStorage.getItem('cineplus_cart')) || [];
     let seats = JSON.parse(localStorage.getItem('cineplus_seats')) || [];
@@ -139,7 +140,6 @@ function proceedToCheckout() {
         return;
     }
 
-    // Save discount option text for the invoice page
     let discountSelect = document.getElementById('discount-selector');
     let discountLabel = discountSelect ? discountSelect.options[discountSelect.selectedIndex].text : 'Regular Price';
     let discountRate = discountSelect ? parseFloat(discountSelect.value) || 0 : 0;
@@ -150,7 +150,7 @@ function proceedToCheckout() {
     window.location.href = 'invoice.html';
 }
 
-// Interactive Seat Selection
+// 3. Interactive Seat Selection
 function renderSeatMap() {
     let seatGrid = document.getElementById('seat-grid');
     if (!seatGrid) return;
@@ -198,7 +198,7 @@ function toggleSeat(seatId, isOccupied) {
     renderSeatMap();
 }
 
-// Geolocation API Detection
+// 4. Geolocation API Detection
 function initGeolocation() {
     let activeBranch = localStorage.getItem('cineplus_branch') || 'Cineplus+ Quezon City Flagship Hub';
     
@@ -230,7 +230,7 @@ function updateBranchUI(branchName) {
     }
 }
 
-// Modals (Search & Profile)
+// 5. Interactive Search & Profile Modals (Fully Enabled)
 function setupModals() {
     if (document.getElementById('cineplus-modals-injected')) return;
 
@@ -238,6 +238,7 @@ function setupModals() {
 
     const modalHTML = `
         <div id="cineplus-modals-injected">
+            <!-- Search Modal -->
             <div id="search-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
                 <div style="background:#151515; border:1px solid #333; padding:30px; border-radius:12px; width:90%; max-width:500px; text-align:center; position:relative;">
                     <button onclick="closeModals()" style="position:absolute; top:15px; right:15px; background:none; border:none; color:#aaa; font-size:1.2rem; cursor:pointer;">✕</button>
@@ -247,6 +248,7 @@ function setupModals() {
                 </div>
             </div>
 
+            <!-- Profile Modal -->
             <div id="profile-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
                 <div style="background:#151515; border:1px solid #333; padding:30px; border-radius:12px; width:90%; max-width:400px; text-align:center; position:relative;">
                     <button onclick="closeModals()" style="position:absolute; top:15px; right:15px; background:none; border:none; color:#aaa; font-size:1.2rem; cursor:pointer;">✕</button>
