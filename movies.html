@@ -13,6 +13,7 @@
         <nav class="pill-nav">
             <a href="index.html" class="nav-item">Home</a>
             <a href="movies.html" class="nav-item active">Movies</a>
+            <a href="food.html" class="nav-item">Food & Bundles</a>
             <a href="booking.html" class="nav-item">Booking & Cart</a>
             <a href="info.html" class="nav-item">Info</a>
             <a href="developers.html" class="nav-item">Developers</a>
@@ -32,46 +33,280 @@
 
         <div class="catalog-grid">
             <!-- 01 to 05: Marvel & Spider-Man -->
-            <article class="catalog-card"><img src="images/m1.jpg" alt="Avengers Doomsday"><h3>01. Avengers: Doomsday</h3><p class="category">Marvel Studios</p><p>Epic superhero confrontation against Doom.</p><p class="price">PHP 250.00</p></article>
-            <article class="catalog-card"><img src="images/m2.jpg" alt="Spider-Man: No Way Home"><h3>02. Spider-Man: No Way Home</h3><p class="category">Marvel / Sony</p><p>Multiverse action across generations.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m3.jpg" alt="Spider-Man: Into the Spider-Verse"><h3>03. Spider-Man: Into Spider-Verse</h3><p class="category">Animation / Marvel</p><p>Miles Morales discovers the multiverse.</p><p class="price">PHP 220.00</p></article>
-            <article class="catalog-card"><img src="images/m4.jpg" alt="Spider-Man: Across the Spider-Verse"><h3>04. Spider-Man: Across Spider-Verse</h3><p class="category">Animation / Marvel</p><p>Next level dimension-hopping adventure.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m5.jpg" alt="Avengers: Endgame"><h3>05. Avengers: Endgame</h3><p class="category">Marvel Studios</p><p>The ultimate Infinity Saga finale.</p><p class="price">PHP 250.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Avengers: Doomsday', 250, 'Movie Ticket')">
+                <img src="images/m1.jpg" alt="Avengers Doomsday">
+                <h3>01. Avengers: Doomsday</h3>
+                <p class="category">Marvel Studios</p>
+                <p>Epic superhero confrontation against Doom.</p>
+                <p class="price">PHP 250.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Spider-Man: No Way Home', 240, 'Movie Ticket')">
+                <img src="images/m2.jpg" alt="Spider-Man: No Way Home">
+                <h3>02. Spider-Man: No Way Home</h3>
+                <p class="category">Marvel / Sony</p>
+                <p>Multiverse action across generations.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Spider-Man: Into Spider-Verse', 220, 'Movie Ticket')">
+                <img src="images/m3.jpg" alt="Spider-Man: Into the Spider-Verse">
+                <h3>03. Spider-Man: Into Spider-Verse</h3>
+                <p class="category">Animation / Marvel</p>
+                <p>Miles Morales discovers the multiverse.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Spider-Man: Across Spider-Verse', 230, 'Movie Ticket')">
+                <img src="images/m4.jpg" alt="Spider-Man: Across the Spider-Verse">
+                <h3>04. Spider-Man: Across Spider-Verse</h3>
+                <p class="category">Animation / Marvel</p>
+                <p>Next level dimension-hopping adventure.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Avengers: Endgame', 250, 'Movie Ticket')">
+                <img src="images/m5.jpg" alt="Avengers: Endgame">
+                <h3>05. Avengers: Endgame</h3>
+                <p class="category">Marvel Studios</p>
+                <p>The ultimate Infinity Saga finale.</p>
+                <p class="price">PHP 250.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
 
             <!-- 06 to 10: Star Wars Franchise -->
-            <article class="catalog-card"><img src="images/m6.jpg" alt="Star Wars Episode V"><h3>06. Star Wars: Empire Strikes Back</h3><p class="category">Star Wars / Sci-Fi</p><p>Darth Vader reveals the galactic truth.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m7.jpg" alt="Star Wars Episode III"><h3>07. Star Wars: Revenge of the Sith</h3><p class="category">Star Wars / Sci-Fi</p><p>The tragic rise of Lord Vader.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m8.jpg" alt="Star Wars Episode VI"><h3>08. Star Wars: Return of the Jedi</h3><p class="category">Star Wars / Sci-Fi</p><p>The climax of the Galactic Civil War.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m9.jpg" alt="Rogue One"><h3>09. Rogue One: A Star Wars Story</h3><p class="category">Star Wars / Sci-Fi</p><p>Daring mission to steal Death Star plans.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m10.jpg" alt="Star Wars Episode IV"><h3>10. Star Wars: A New Hope</h3><p class="category">Star Wars / Sci-Fi</p><p>Where the legendary saga began.</p><p class="price">PHP 220.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Star Wars: Empire Strikes Back', 240, 'Movie Ticket')">
+                <img src="images/m6.jpg" alt="Star Wars Episode V">
+                <h3>06. Star Wars: Empire Strikes Back</h3>
+                <p class="category">Star Wars / Sci-Fi</p>
+                <p>Darth Vader reveals the galactic truth.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Star Wars: Revenge of the Sith', 240, 'Movie Ticket')">
+                <img src="images/m7.jpg" alt="Star Wars Episode III">
+                <h3>07. Star Wars: Revenge of the Sith</h3>
+                <p class="category">Star Wars / Sci-Fi</p>
+                <p>The tragic rise of Lord Vader.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Star Wars: Return of the Jedi', 230, 'Movie Ticket')">
+                <img src="images/m8.jpg" alt="Star Wars Episode VI">
+                <h3>08. Star Wars: Return of the Jedi</h3>
+                <p class="category">Star Wars / Sci-Fi</p>
+                <p>The climax of the Galactic Civil War.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Rogue One: A Star Wars Story', 230, 'Movie Ticket')">
+                <img src="images/m9.jpg" alt="Rogue One">
+                <h3>09. Rogue One: A Star Wars Story</h3>
+                <p class="category">Star Wars / Sci-Fi</p>
+                <p>Daring mission to steal Death Star plans.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Star Wars: A New Hope', 220, 'Movie Ticket')">
+                <img src="images/m10.jpg" alt="Star Wars Episode IV">
+                <h3>10. Star Wars: A New Hope</h3>
+                <p class="category">Star Wars / Sci-Fi</p>
+                <p>Where the legendary saga began.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
 
             <!-- 11 to 14: Dune & Sci-Fi Epics -->
-            <article class="catalog-card"><img src="images/m11.jpg" alt="Dune Part One"><h3>11. Dune: Part One</h3><p class="category">Sci-Fi Epic</p><p>Paul Atreides travels to dangerous Arrakis.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m12.jpg" alt="Dune Part Two"><h3>12. Dune: Part Two</h3><p class="category">Sci-Fi Epic</p><p>The mythical journey of destiny and revenge.</p><p class="price">PHP 250.00</p></article>
-            <article class="catalog-card"><img src="images/m13.jpg" alt="Interstellar"><h3>13. Interstellar</h3><p class="category">Sci-Fi / Drama</p><p>A space voyage to save mankind.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m14.jpg" alt="Inception"><h3>14. Inception</h3><p class="category">Sci-Fi / Action</p><p>Stealing secrets through dream sharing.</p><p class="price">PHP 230.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Dune: Part One', 240, 'Movie Ticket')">
+                <img src="images/m11.jpg" alt="Dune Part One">
+                <h3>11. Dune: Part One</h3>
+                <p class="category">Sci-Fi Epic</p>
+                <p>Paul Atreides travels to dangerous Arrakis.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Dune: Part Two', 250, 'Movie Ticket')">
+                <img src="images/m12.jpg" alt="Dune Part Two">
+                <h3>12. Dune: Part Two</h3>
+                <p class="category">Sci-Fi Epic</p>
+                <p>The mythical journey of destiny and revenge.</p>
+                <p class="price">PHP 250.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Interstellar', 240, 'Movie Ticket')">
+                <img src="images/m13.jpg" alt="Interstellar">
+                <h3>13. Interstellar</h3>
+                <p class="category">Sci-Fi / Drama</p>
+                <p>A space voyage to save mankind.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Inception', 230, 'Movie Ticket')">
+                <img src="images/m14.jpg" alt="Inception">
+                <h3>14. Inception</h3>
+                <p class="category">Sci-Fi / Action</p>
+                <p>Stealing secrets through dream sharing.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
 
             <!-- 15 to 18: Horror & Backrooms -->
-            <article class="catalog-card"><img src="images/m15.jpg" alt="The Backrooms"><h3>15. The Backrooms: Found Footage</h3><p class="category">Horror / Mystery</p><p>Trapped in endless yellow liminal halls.</p><p class="price">PHP 220.00</p></article>
-            <article class="catalog-card"><img src="images/m16.jpg" alt="Resident Evil Welcome to Raccoon City"><h3>16. Resident Evil: Raccoon City</h3><p class="category">Horror / Action</p><p>Survival horror in the Umbrella collapse.</p><p class="price">PHP 220.00</p></article>
-            <article class="catalog-card"><img src="images/m17.jpg" alt="A Quiet Place"><h3>17. A Quiet Place: Day One</h3><p class="category">Horror / Thriller</p><p>Surviving the silent alien invasion.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m18.jpg" alt="Five Nights at Freddys"><h3>18. Five Nights at Freddy's</h3><p class="category">Horror / Mystery</p><p>Night shift survival at Freddy Fazbear's.</p><p class="price">PHP 210.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('The Backrooms: Found Footage', 220, 'Movie Ticket')">
+                <img src="images/m15.jpg" alt="The Backrooms">
+                <h3>15. The Backrooms: Found Footage</h3>
+                <p class="category">Horror / Mystery</p>
+                <p>Trapped in endless yellow liminal halls.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Resident Evil: Raccoon City', 220, 'Movie Ticket')">
+                <img src="images/m16.jpg" alt="Resident Evil Welcome to Raccoon City">
+                <h3>16. Resident Evil: Raccoon City</h3>
+                <p class="category">Horror / Action</p>
+                <p>Survival horror in the Umbrella collapse.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('A Quiet Place: Day One', 230, 'Movie Ticket')">
+                <img src="images/m17.jpg" alt="A Quiet Place">
+                <h3>17. A Quiet Place: Day One</h3>
+                <p class="category">Horror / Thriller</p>
+                <p>Surviving the silent alien invasion.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Five Nights at Freddy\'s', 210, 'Movie Ticket')">
+                <img src="images/m18.jpg" alt="Five Nights at Freddys">
+                <h3>18. Five Nights at Freddy's</h3>
+                <p class="category">Horror / Mystery</p>
+                <p>Night shift survival at Freddy Fazbear's.</p>
+                <p class="price">PHP 210.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
 
             <!-- 19 to 24: Action & Superhero -->
-            <article class="catalog-card"><img src="images/m19.jpg" alt="The Batman"><h3>19. The Batman</h3><p class="category">DC Studios</p><p>The Dark Knight investigates Gotham's corruption.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m20.jpg" alt="Deadpool & Wolverine"><h3>20. Deadpool & Wolverine</h3><p class="category">Marvel / Action</p><p>The ultimate chaotic team-up adventure.</p><p class="price">PHP 250.00</p></article>
-            <article class="catalog-card"><img src="images/m21.jpg" alt="Guardians of the Galaxy Vol 3"><h3>21. Guardians of the Galaxy 3</h3><p class="category">Marvel Studios</p><p>The final mission for Rocket and crew.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m22.jpg" alt="John Wick 4"><h3>22. John Wick: Chapter 4</h3><p class="category">Action / Thriller</p><p>John Wick faces the global High Table.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m23.jpg" alt="Top Gun Maverick"><h3>23. Top Gun: Maverick</h3><p class="category">Action / Drama</p><p>High-stakes fighter pilot training mission.</p><p class="price">PHP 240.00</p></article>
-            <article class="catalog-card"><img src="images/m24.jpg" alt="Oppenheimer"><h3>24. Oppenheimer</h3><p class="category">Biography / Drama</p><p>The history-altering Manhattan Project.</p><p class="price">PHP 250.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('The Batman', 240, 'Movie Ticket')">
+                <img src="images/m19.jpg" alt="The Batman">
+                <h3>19. The Batman</h3>
+                <p class="category">DC Studios</p>
+                <p>The Dark Knight investigates Gotham's corruption.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Deadpool & Wolverine', 250, 'Movie Ticket')">
+                <img src="images/m20.jpg" alt="Deadpool & Wolverine">
+                <h3>20. Deadpool & Wolverine</h3>
+                <p class="category">Marvel / Action</p>
+                <p>The ultimate chaotic team-up adventure.</p>
+                <p class="price">PHP 250.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Guardians of the Galaxy 3', 230, 'Movie Ticket')">
+                <img src="images/m21.jpg" alt="Guardians of the Galaxy Vol 3">
+                <h3>21. Guardians of the Galaxy 3</h3>
+                <p class="category">Marvel Studios</p>
+                <p>The final mission for Rocket and crew.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('John Wick: Chapter 4', 240, 'Movie Ticket')">
+                <img src="images/m22.jpg" alt="John Wick 4">
+                <h3>22. John Wick: Chapter 4</h3>
+                <p class="category">Action / Thriller</p>
+                <p>John Wick faces the global High Table.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Top Gun: Maverick', 240, 'Movie Ticket')">
+                <img src="images/m23.jpg" alt="Top Gun Maverick">
+                <h3>23. Top Gun: Maverick</h3>
+                <p class="category">Action / Drama</p>
+                <p>High-stakes fighter pilot training mission.</p>
+                <p class="price">PHP 240.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Oppenheimer', 250, 'Movie Ticket')">
+                <img src="images/m24.jpg" alt="Oppenheimer">
+                <h3>24. Oppenheimer</h3>
+                <p class="category">Biography / Drama</p>
+                <p>The history-altering Manhattan Project.</p>
+                <p class="price">PHP 250.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
 
             <!-- 25 to 30: Animation & Fan Favorites -->
-            <article class="catalog-card"><img src="images/m25.jpg" alt="Inside Out 2"><h3>25. Inside Out 2</h3><p class="category">Disney / Pixar</p><p>Navigating new emotions in teenage years.</p><p class="price">PHP 220.00</p></article>
-            <article class="catalog-card"><img src="images/m26.jpg" alt="Kung Fu Panda 4"><h3>26. Kung Fu Panda 4</h3><p class="category">Animation / Action</p><p>Po becomes the Spiritual Leader of the Valley.</p><p class="price">PHP 210.00</p></article>
-            <article class="catalog-card"><img src="images/m27.jpg" alt="Godzilla x Kong"><h3>27. Godzilla x Kong: New Empire</h3><p class="category">Monsterverse</p><p>Titan showdown against Hollow Earth threat.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m28.jpg" alt="Transformers One"><h3>28. Transformers One</h3><p class="category">Animation / Sci-Fi</p><p>The origin story of Optimus and Megatron.</p><p class="price">PHP 220.00</p></article>
-            <article class="catalog-card"><img src="images/m29.jpg" alt="Demon Slayer Hashira Training"><h3>29. Demon Slayer: Hashira Training</h3><p class="category">Anime / Fantasy</p><p>Preparation for the Infinity Castle battle.</p><p class="price">PHP 230.00</p></article>
-            <article class="catalog-card"><img src="images/m30.jpg" alt="Jujutsu Kaisen 0"><h3>30. Jujutsu Kaisen 0</h3><p class="category">Anime / Fantasy</p><p>Yuta Okkotsu joins Jujutsu High School.</p><p class="price">PHP 230.00</p></article>
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Inside Out 2', 220, 'Movie Ticket')">
+                <img src="images/m25.jpg" alt="Inside Out 2">
+                <h3>25. Inside Out 2</h3>
+                <p class="category">Disney / Pixar</p>
+                <p>Navigating new emotions in teenage years.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Kung Fu Panda 4', 210, 'Movie Ticket')">
+                <img src="images/m26.jpg" alt="Kung Fu Panda 4">
+                <h3>26. Kung Fu Panda 4</h3>
+                <p class="category">Animation / Action</p>
+                <p>Po becomes the Spiritual Leader of the Valley.</p>
+                <p class="price">PHP 210.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Godzilla x Kong: New Empire', 230, 'Movie Ticket')">
+                <img src="images/m27.jpg" alt="Godzilla x Kong">
+                <h3>27. Godzilla x Kong: New Empire</h3>
+                <p class="category">Monsterverse</p>
+                <p>Titan showdown against Hollow Earth threat.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Transformers One', 220, 'Movie Ticket')">
+                <img src="images/m28.jpg" alt="Transformers One">
+                <h3>28. Transformers One</h3>
+                <p class="category">Animation / Sci-Fi</p>
+                <p>The origin story of Optimus and Megatron.</p>
+                <p class="price">PHP 220.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Demon Slayer: Hashira Training', 230, 'Movie Ticket')">
+                <img src="images/m29.jpg" alt="Demon Slayer Hashira Training">
+                <h3>29. Demon Slayer: Hashira Training</h3>
+                <p class="category">Anime / Fantasy</p>
+                <p>Preparation for the Infinity Castle battle.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
+
+            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Jujutsu Kaisen 0', 230, 'Movie Ticket')">
+                <img src="images/m30.jpg" alt="Jujutsu Kaisen 0">
+                <h3>30. Jujutsu Kaisen 0</h3>
+                <p class="category">Anime / Fantasy</p>
+                <p>Yuta Okkotsu joins Jujutsu High School.</p>
+                <p class="price">PHP 230.00</p>
+                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Book Ticket ➔</span>
+            </article>
         </div>
     </main>
 
@@ -79,5 +314,6 @@
         <p>&copy; 2026 Cineplus. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
