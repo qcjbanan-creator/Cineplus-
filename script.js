@@ -1,6 +1,5 @@
-// Cineplus+ Full Interactive Engine (Cart, Quantities, Custom Items, Seats, Modals & Geolocation)
+// Cineplus+ Full Interactive Engine (Cart, Quantities, Custom Items, Seats, Modals, Geolocation & Invoice Checkout)
 
-// 1. Cart Management & Local Storage Sync
 function selectAndBook(name, price, type, qtyId = null, checkboxId = null) {
     if (checkboxId) {
         let chk = document.getElementById(checkboxId);
@@ -126,7 +125,32 @@ function loadCartSummary() {
     if (totalElem) totalElem.innerText = `PHP ${finalTotal.toFixed(2)}`;
 }
 
-// 2. Interactive Seat Selection
+// Checkout Trigger Handler
+function proceedToCheckout() {
+    let cart = JSON.parse(localStorage.getItem('cineplus_cart')) || [];
+    let seats = JSON.parse(localStorage.getItem('cineplus_seats')) || [];
+
+    if (cart.length === 0) {
+        alert('Your cart is empty. Please select a movie or food item before checking out.');
+        return;
+    }
+    if (seats.length === 0) {
+        alert('Please select at least one seat from the theater seat map before proceeding.');
+        return;
+    }
+
+    // Save discount option text for the invoice page
+    let discountSelect = document.getElementById('discount-selector');
+    let discountLabel = discountSelect ? discountSelect.options[discountSelect.selectedIndex].text : 'Regular Price';
+    let discountRate = discountSelect ? parseFloat(discountSelect.value) || 0 : 0;
+
+    localStorage.setItem('cineplus_checkout_discount_label', discountLabel);
+    localStorage.setItem('cineplus_checkout_discount_rate', discountRate);
+
+    window.location.href = 'invoice.html';
+}
+
+// Interactive Seat Selection
 function renderSeatMap() {
     let seatGrid = document.getElementById('seat-grid');
     if (!seatGrid) return;
@@ -174,16 +198,16 @@ function toggleSeat(seatId, isOccupied) {
     renderSeatMap();
 }
 
-// 3. Geolocation API Detection
+// Geolocation API Detection
 function initGeolocation() {
-    let activeBranch = localStorage.getItem('cineplus_branch') || 'Cineplus+ Quezon City Hub';
+    let activeBranch = localStorage.getItem('cineplus_branch') || 'Cineplus+ Quezon City Flagship Hub';
     
     if (navigator.geolocation && !localStorage.getItem('cineplus_branch')) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 let lat = position.coords.latitude;
                 if (lat > 14.65) {
-                    activeBranch = 'Cineplus+ Quezon City Hub';
+                    activeBranch = 'Cineplus+ Quezon City Flagship Hub';
                 } else {
                     activeBranch = 'Cineplus+ Rizal Branch';
                 }
@@ -206,11 +230,11 @@ function updateBranchUI(branchName) {
     }
 }
 
-// 4. Modals (Search & Profile)
+// Modals (Search & Profile)
 function setupModals() {
     if (document.getElementById('cineplus-modals-injected')) return;
 
-    let activeBranch = localStorage.getItem('cineplus_branch') || 'Cineplus+ Quezon City Hub';
+    let activeBranch = localStorage.getItem('cineplus_branch') || 'Cineplus+ Quezon City Flagship Hub';
 
     const modalHTML = `
         <div id="cineplus-modals-injected">
