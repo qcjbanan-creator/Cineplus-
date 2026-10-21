@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cineplus | Booking & Cart</title>
-
-  <!-- Favicon link pointing to your images folder -->
-  <link rel="icon" type="image/png" href="media/logo.png">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cineplus+ | Home</title>
+
+    <!-- Favicon link pointing to your images folder -->
+    <link rel="icon" type="image/png" href="media/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,11 +21,10 @@
             <a href="info.html" class="nav-item">Info</a>
             <a href="developers.html" class="nav-item">Developers</a>
             
-             <div class="nav-icons">
+            <div class="nav-icons">
                 <button class="icon-btn" title="Search">🔍</button>
                 <button class="icon-btn" title="Profile">👤</button>
             </div>
-
         </nav>
     </header>
 
@@ -84,9 +77,12 @@
 
         function togglePlay() {
             if (video.paused) {
-                video.play();
-                playBtnText.innerText = "Pause";
-                playBtnIcon.innerText = "⏸";
+                video.play().then(() => {
+                    playBtnText.innerText = "Pause";
+                    playBtnIcon.innerText = "⏸";
+                }).catch(error => {
+                    console.error("Autoplay/Play blocked by browser:", error);
+                });
             } else {
                 video.pause();
                 playBtnText.innerText = "Play";
@@ -103,7 +99,21 @@
                 soundBtn.innerText = "🔇";
             }
         }
-<script src="script.js"></script>
+
+        // Synchronize button UI with native video events
+        video.addEventListener('play', () => {
+            playBtnText.innerText = "Pause";
+            playBtnIcon.innerText = "⏸";
+        });
+
+        video.addEventListener('pause', () => {
+            playBtnText.innerText = "Play";
+            playBtnIcon.innerText = "▶";
+        });
+    </script>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
 
 </body>
 </html>
