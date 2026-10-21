@@ -3,47 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineplus+</title>
+    <title>Cineplus+ | Info & House Policies</title>
 
-    <!-- Browser Tab Logo -->
+    <!-- Browser Tab Logo (Favicon) -->
     <link rel="icon" type="image/png" href="media/logo.png">
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="subpage-body">
 
+    <!-- Floating Top Navigation Bar (Clean Pill Bar) -->
     <header class="floating-nav-container">
         <nav class="pill-nav">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="movies.html" class="nav-item">Movies</a>
-            <a href="food.html" class="nav-item">Food & Bundles</a>
-            <a href="booking.html" class="nav-item">Booking & Cart</a>
-            <a href="info.html" class="nav-item active">Info</a>
-            <a href="developers.html" class="nav-item">Developers</a>
+            <div class="nav-links-wrapper">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="movies.html" class="nav-item">Movies</a>
+                <a href="food.html" class="nav-item">Food & Bundles</a>
+                <a href="booking.html" class="nav-item">Booking & Cart</a>
+                <a href="info.html" class="nav-item active">Info</a>
+                <a href="developers.html" class="nav-item">Developers</a>
+            </div>
             
-            <div class="nav-icons">
-                <button class="icon-btn" title="Search">🔍</button>
-                <button class="icon-btn" title="Profile">👤</button>
+            <div class="nav-icons" style="display: flex; gap: 10px; align-items: center;">
+                <button class="icon-btn" title="Search" style="background:none; border:none; cursor:pointer; font-size:1rem;">🔍</button>
+                <button class="icon-btn" title="Profile" style="background:none; border:none; cursor:pointer; font-size:1rem;">👤</button>
             </div>
         </nav>
     </header>
 
     <main class="page-container">
+        <!-- Purpose & Vision Section -->
         <div class="page-header">
-            <h2>Theater Branches & Information Hub</h2>
-            <p>Locate your nearest Cineplus+ theater branch and review our house policies.</p>
+            <h2>About Cineplus+</h2>
+            <p>Empowering local theater management with seamless online ticketing and cinema experiences.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
-            <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
-                <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Quezon City Flagship</h3>
-                <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Equipped with IMAX screens, Dolby Atmos surround sound, and VIP recliner seating.</p>
-                <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
+        <div style="background: #0a0a0a; border: 1px solid #333; padding: 30px; border-radius: 12px; margin-bottom: 40px; text-align: center;">
+            <h3 style="color: #FFD700; margin-bottom: 15px; font-size: 1.4rem;">Our Purpose & Mission</h3>
+            <p style="color: #ccc; line-height: 1.8; max-width: 750px; margin: 0 auto; font-size: 0.95rem;">
+                <strong style="color: #fff;">Cineplus+</strong> was engineered as a comprehensive local theater management and web ticketing system designed to bridge modern online convenience with premium cinema projection. Our platform provides moviegoers with real-time seat reservation, streamlined concession bundling, and dynamic privilege discount integration (Student, Senior Citizen, and PWD) to ensure a hassle-free movie-going journey from home to the big screen.
+            </p>
+        </div>
+
+        <!-- Theater Branches Section -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">Theater Branches & Location Hubs</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Quezon City Flagship</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Equipped with IMAX screens, Dolby Atmos surround sound, and VIP recliner seating.</p>
+                    <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
+                </div>
+
+                <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Rizal Branch</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Featuring laser projection theaters, private screening suites, and gourmet snack stands.</p>
+                    <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
+                </div>
             </div>
-            <div style="background: #111; border: 1px solid #333; padding: 25px; border-radius: 12px;">
-                <h3 style="color: #FFD700; margin-bottom: 10px;">Cineplus+ Rizal Branch</h3>
-                <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Featuring laser projection theaters and private screening suites.</p>
-                <span style="color: #4ecca3; font-size: 0.85rem; font-weight: bold;">Status: Open Today</span>
+        </div>
+
+        <!-- Cinema House Policies -->
+        <div style="background: #0a0a0a; border: 1px solid #333; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">Cinema House Policies</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <div style="background: #151515; padding: 15px; border-radius: 8px; border-left: 3px solid #FFD700;">
+                    <h4 style="color: #fff; margin-bottom: 6px;">🎟️ Ticket Validity</h4>
+                    <p style="color: #aaa; font-size: 0.85rem;">E-tickets are non-transferable and valid only for the chosen movie slot and seat selection.</p>
+                </div>
+                <div style="background: #151515; padding: 15px; border-radius: 8px; border-left: 3px solid #FFD700;">
+                    <h4 style="color: #fff; margin-bottom: 6px;">🍿 Concessions Policy</h4>
+                    <p style="color: #aaa; font-size: 0.85rem;">Only food and drinks purchased from Cineplus+ snack bars or combos are permitted inside cinema halls.</p>
+                </div>
+                <div style="background: #151515; padding: 15px; border-radius: 8px; border-left: 3px solid #FFD700;">
+                    <h4 style="color: #fff; margin-bottom: 6px;">🎓 Privilege Discounts</h4>
+                    <p style="color: #aaa; font-size: 0.85rem;">Student (10%) and Senior/PWD (20%) discount holders must present valid government IDs upon entry verification.</p>
+                </div>
+                <div style="background: #151515; padding: 15px; border-radius: 8px; border-left: 3px solid #FFD700;">
+                    <h4 style="color: #fff; margin-bottom: 6px;">🔇 Cinema Etiquette</h4>
+                    <p style="color: #aaa; font-size: 0.85rem;">Please set mobile phones to silent mode during film screenings. Unauthorized recording is strictly prohibited.</p>
+                </div>
             </div>
         </div>
     </main>
