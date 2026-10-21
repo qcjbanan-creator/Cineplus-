@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineplus+ | Home</title>
+    <title>Cineplus+</title>
 
-    <!-- Favicon link pointing to your images folder -->
+    <!-- Browser Tab Logo -->
     <link rel="icon" type="image/png" href="media/logo.png">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,16 +15,20 @@
     <!-- Floating Top Navigation Pill Bar -->
     <header class="floating-nav-container">
         <nav class="pill-nav">
-            <a href="index.html" class="nav-item active">Home</a>
-            <a href="movies.html" class="nav-item">Movies</a>
-            <a href="food.html" class="nav-item">Food & Bundles</a>
-            <a href="booking.html" class="nav-item">Booking & Cart</a>
-            <a href="info.html" class="nav-item">Info</a>
-            <a href="developers.html" class="nav-item">Developers</a>
+                       </a>
+
+            <div class="nav-links-wrapper">
+                <a href="index.html" class="nav-item active">Home</a>
+                <a href="movies.html" class="nav-item">Movies</a>
+                <a href="food.html" class="nav-item">Food & Bundles</a>
+                <a href="booking.html" class="nav-item">Booking & Cart</a>
+                <a href="info.html" class="nav-item">Info</a>
+                <a href="developers.html" class="nav-item">Developers</a>
+            </div>
             
-            <div class="nav-icons">
-                <button class="icon-btn" title="Search">🔍</button>
-                <button class="icon-btn" title="Profile">👤</button>
+            <div class="nav-icons" style="display: flex; gap: 10px; align-items: center;">
+                <button class="icon-btn" title="Search" style="background:none; border:none; cursor:pointer; font-size:1rem;">🔍</button>
+                <button class="icon-btn" title="Profile" style="background:none; border:none; cursor:pointer; font-size:1rem;">👤</button>
             </div>
         </nav>
     </header>
@@ -42,7 +47,7 @@
         <!-- On-Screen Cineplus Logo Branding & Action Controls -->
         <div class="hero-content">
             <div class="brand-title-container">
-                <img src="media/logo.png" alt="Cineplus Logo" class="brand-logo-img">
+                <img src="images/logo.png" alt="Cineplus Logo" class="brand-logo-img" onerror="this.style.display='none';">
                 <h1 class="movie-title">CINEPLUS+</h1>
             </div>
             
@@ -70,49 +75,39 @@
 
     <!-- Interactive Video & Audio Control Script -->
     <script>
-        const video = document.getElementById('bgVideo');
-        const playBtnText = document.getElementById('playBtnText');
-        const playBtnIcon = document.getElementById('playBtnIcon');
-        const soundBtn = document.getElementById('soundBtn');
-
         function togglePlay() {
+            const video = document.getElementById('bgVideo');
+            const playBtnText = document.getElementById('playBtnText');
+            const playBtnIcon = document.getElementById('playBtnIcon');
+            if (!video) return;
+
             if (video.paused) {
-                video.play().then(() => {
-                    playBtnText.innerText = "Pause";
-                    playBtnIcon.innerText = "⏸";
-                }).catch(error => {
-                    console.error("Autoplay/Play blocked by browser:", error);
-                });
+                video.play();
+                if (playBtnText) playBtnText.innerText = "Pause";
+                if (playBtnIcon) playBtnIcon.innerText = "⏸";
             } else {
                 video.pause();
-                playBtnText.innerText = "Play";
-                playBtnIcon.innerText = "▶";
+                if (playBtnText) playBtnText.innerText = "Play";
+                if (playBtnIcon) playBtnIcon.innerText = "▶";
             }
         }
 
         function toggleAudio() {
+            const video = document.getElementById('bgVideo');
+            const soundBtn = document.getElementById('soundBtn');
+            if (!video) return;
+
             if (video.muted) {
                 video.muted = false;
-                soundBtn.innerText = "🔊";
+                if (soundBtn) soundBtn.innerText = "🔊";
             } else {
                 video.muted = true;
-                soundBtn.innerText = "🔇";
+                if (soundBtn) soundBtn.innerText = "🔇";
             }
         }
-
-        // Synchronize button UI with native video events
-        video.addEventListener('play', () => {
-            playBtnText.innerText = "Pause";
-            playBtnIcon.innerText = "⏸";
-        });
-
-        video.addEventListener('pause', () => {
-            playBtnText.innerText = "Play";
-            playBtnIcon.innerText = "▶";
-        });
     </script>
 
-    <!-- External Script -->
+    <!-- Global Project Engine -->
     <script src="script.js"></script>
 
 </body>
