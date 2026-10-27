@@ -17,8 +17,8 @@
         <nav class="pill-nav">
             <a href="index.html" class="nav-item">Home</a>
             <a href="movies.html" class="nav-item">Movies</a>
-            <a href="food.html" class="nav-item active">Food & Bundles</a>
-            <a href="booking.html" class="nav-item">Booking & Cart</a>
+            <a href="food.html" class="nav-item">Food & Bundles</a>
+            <a href="booking.html" class="nav-item active">Booking & Cart</a>
             <a href="info.html" class="nav-item">Info</a>
             <a href="developers.html" class="nav-item">Developers</a>
             
@@ -31,91 +31,64 @@
 
     <main class="page-container">
         <div class="page-header">
-            <h2>Cinema Food & Concession Bundles</h2>
-            <p>Elevate your movie experience with our fresh cinema snacks, chilled beverages, and discounted combo deals.</p>
+            <h2>Ticketing Cart & Reservation</h2>
+            <p>Adjust ticket quantities, choose seats, or append custom requests below.</p>
         </div>
 
-        <div class="catalog-grid">
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Regular Popcorn', 80, 'Snack Item')">
-                <img src="images/popcorn.jpg" alt="Regular Popcorn">
-                <h3>01. Regular Popcorn</h3>
-                <p class="category">Snack Item</p>
-                <p>Freshly popped warm buttery theater corn.</p>
-                <p class="price">PHP 80.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
+        <div style="max-width: 800px; margin: 0 auto 50px auto;">
+            <!-- Interactive Seat Selection Module -->
+            <div style="background: #0a0a0a; border: 1px solid #333; padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+                <h3 style="color: #FFD700; margin-bottom: 15px;">Select Your Theater Seats</h3>
+                <div style="background: #222; color: #FFD700; padding: 6px; border-radius: 4px; margin-bottom: 25px; font-weight: bold; letter-spacing: 2px; font-size: 0.85rem;">
+                    CINEMA SCREEN SIDE 🎬
+                </div>
+                <div id="seat-grid" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; max-width: 400px; margin: 0 auto 20px auto;"></div>
+            </div>
 
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Bottled Soda', 50, 'Beverage')">
-                <img src="images/soda.jpg" alt="Bottled Soda">
-                <h3>02. Bottled Soda</h3>
-                <p class="category">Beverage</p>
-                <p>Chilled refreshing carbonated soft drink.</p>
-                <p class="price">PHP 50.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
+            <!-- Reservation Cart -->
+            <div style="background: #0a0a0a; border: 1px solid #333; padding: 30px; border-radius: 12px;">
+                <h3 style="color: #FFD700; margin-bottom: 20px;">Your Reservation Cart</h3>
+                
+                <div id="cart-items-container"></div>
 
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Hotdog Sandwich', 75, 'Snack Item')">
-                <img src="images/hotdog.jpg" alt="Hotdog Sandwich">
-                <h3>03. Hotdog Sandwich</h3>
-                <p class="category">Snack Item</p>
-                <p>Classic grilled hotdog with soft buns & condiments.</p>
-                <p class="price">PHP 75.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
+                <!-- Custom Request Input inside Cart -->
+                <div style="margin: 20px 0; padding: 15px; background: #151515; border-radius: 8px;">
+                    <label style="color: #fff; font-size: 0.9rem; display: block; margin-bottom: 8px;">Add Custom Note / Special Request to Order:</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="custom-item-text" placeholder="e.g. Birthday Celebration Note, Extra Sauce" style="flex: 1; padding: 8px 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px;">
+                        <button onclick="addCustomTextItem()" style="background: #4ecca3; color: #000; font-weight: bold; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer;">Add Note</button>
+                    </div>
+                </div>
 
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Crispy Cheese Nachos', 95, 'Snack Item')">
-                <img src="images/nachos.jpg" alt="Crispy Nachos">
-                <h3>04. Crispy Cheese Nachos</h3>
-                <p class="category">Snack Item</p>
-                <p>Tortilla chips served with warm melted cheese dip.</p>
-                <p class="price">PHP 95.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
+                <!-- Split Discount Selector -->
+                <div style="margin: 20px 0; padding: 15px; background: #151515; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <label style="color: #fff; font-weight: 500;">Select Privilege Discount:</label>
+                    <select id="discount-selector" style="background: #222; color: #fff; border: 1px solid #444; padding: 8px 12px; border-radius: 6px;">
+                        <option value="0">Regular Price (0% Off)</option>
+                        <option value="0.10">Student Privilege (10% Off)</option>
+                        <option value="0.20">Senior Citizen / PWD Privilege (20% Off)</option>
+                    </select>
+                </div>
 
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Gourmet Seasoned Fries', 85, 'Snack Item')">
-                <img src="images/fries.jpg" alt="Flavored Fries">
-                <h3>05. Gourmet Seasoned Fries</h3>
-                <p class="category">Snack Item</p>
-                <p>Crispy potato fries with Cheese, BBQ, or Sour Cream flavor.</p>
-                <p class="price">PHP 85.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
+                <div style="border-top: 1px solid #333; padding-top: 15px; margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 8px;">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">PHP 0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #4ecca3; margin-bottom: 8px;">
+                        <span>Discount Applied:</span>
+                        <span id="cart-discount-amount">PHP 0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #FFD700; font-size: 1.25rem; font-weight: bold; margin-top: 10px;">
+                        <span>Final Total:</span>
+                        <span id="cart-final-total">PHP 0.00</span>
+                    </div>
+                </div>
 
-            <article class="catalog-card" style="cursor: pointer;" onclick="selectAndBook('Chilled Mineral Water', 35, 'Beverage')">
-                <img src="images/water.jpg" alt="Mineral Water">
-                <h3>06. Chilled Mineral Water</h3>
-                <p class="category">Beverage</p>
-                <p>500ml pure purified drinking water.</p>
-                <p class="price">PHP 35.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add to Cart ➔</span>
-            </article>
-
-            <article class="catalog-card" style="cursor: pointer; border: 1px solid #FFD700;" onclick="selectAndBook('Solo Movie Combo', 120, 'Food Bundle')">
-                <img src="images/b1.jpg" alt="Solo Combo">
-                <h3>07. Solo Movie Combo</h3>
-                <p class="category" style="color: #FFD700; font-weight: bold;">Value Snack Bundle</p>
-                <p>1 Regular Popcorn + 1 Bottled Drink.</p>
-                <p class="price">PHP 120.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add Bundle ➔</span>
-            </article>
-
-            <article class="catalog-card" style="cursor: pointer; border: 1px solid #FFD700;" onclick="selectAndBook('Pair Movie Combo', 220, 'Food Bundle')">
-                <img src="images/b2.jpg" alt="Pair Combo">
-                <h3>08. Pair Movie Combo</h3>
-                <p class="category" style="color: #FFD700; font-weight: bold;">Value Snack Bundle</p>
-                <p>1 Large Popcorn + 2 Bottled Drinks.</p>
-                <p class="price">PHP 220.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add Bundle ➔</span>
-            </article>
-
-            <article class="catalog-card" style="cursor: pointer; border: 1px solid #FFD700;" onclick="selectAndBook('Ultimate Family Bundle', 400, 'Food Bundle')">
-                <img src="images/b3.jpg" alt="Family Bundle">
-                <h3>09. Ultimate Family Bundle</h3>
-                <p class="category" style="color: #FFD700; font-weight: bold;">Value Snack Bundle</p>
-                <p>2 Large Popcorns + 2 Hotdogs + 4 Bottled Drinks.</p>
-                <p class="price">PHP 400.00</p>
-                <span style="display: inline-block; background: #FFD700; color: #000; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-top: 10px;">Add Bundle ➔</span>
-            </article>
+                <button onclick="proceedToCheckout()" style="width: 100%; margin-top: 25px; background: #FFD700; color: #000; border: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 1.05rem; cursor: pointer;">
+    Proceed to Checkout & Generate Invoice
+</button>
+            </div>
         </div>
     </main>
 
