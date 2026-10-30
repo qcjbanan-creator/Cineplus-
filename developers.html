@@ -1,27 +1,28 @@
+<!-- Banan, Charles Justine T. -->
+<!-- IT11S10 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineplus+</title>
+    <title>Cineplus+ - Development Team</title>
 
     <!-- Browser Tab Logo -->
     <link rel="icon" type="image/png" href="media/logo.png">
-
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <header class="floating-nav-container">
         <nav class="pill-nav">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="movies.html" class="nav-item">Movies</a>
-            <a href="food.html" class="nav-item">Food & Bundles</a>
-            <a href="booking.html" class="nav-item">Booking & Cart</a>
-            <a href="info.html" class="nav-item">Info</a>
-            <a href="developers.html" class="nav-item active">Developers</a>
-            
+            <div class="nav-links-wrapper">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="movies.html" class="nav-item">Movies</a>
+                <a href="food.html" class="nav-item">Food & Bundles</a>
+                <a href="booking.html" class="nav-item">Booking & Cart</a>
+                <a href="info.html" class="nav-item">Info</a>
+                <a href="developers.html" class="nav-item active">Developers</a>
+            </div>
             <div class="nav-icons">
                 <button class="icon-btn" title="Search">🔍</button>
                 <button class="icon-btn" title="Profile">👤</button>
@@ -29,7 +30,7 @@
         </nav>
     </header>
 
-    <main class="page-container">
+    <main class="page-container" style="padding-top: 100px; padding-bottom: 50px;">
         <div class="page-header" style="text-align: center; margin-bottom: 40px;">
             <h2 style="color: #FFD700; font-size: 2.4rem; margin-bottom: 10px;">Development Team</h2>
             <p style="color: #aaaaaa; max-width: 650px; margin: 0 auto;">
@@ -37,74 +38,78 @@
             </p>
         </div>
 
-        <div class="developers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        <div class="developers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             
-            <article class="developer-card" style="background: #111111; border: 1px solid #FFD700; border-radius: 12px; padding: 25px; text-align: center;">
+            <!-- Developer 1: Charles -->
+            <article class="developer-card" style="background: #111111; border: 2px solid #FFD700; border-radius: 12px; padding: 25px; text-align: center;">
                 <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #FFD700; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
-                    <img src="images/dev1.jpg" alt="Charles Justine T. Banan" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/150/222222/FFD700?text=CB'">
+                    <img src="images/charles.jpg" alt="Charles Justine T. Banan" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 5px;">Charles Justine T. Banan</h3>
                 <p style="color: #FFD700; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Lead Developer & System Architect</p>
                 <p style="color: #aaaaaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
                     Spearheaded the C++ backend logic integration, web structure, UI theme styling, and core ticketing module workflows.
                 </p>
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">C++</span>
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">HTML/CSS</span>
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">UI/UX</span>
+                <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">C++</span>
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">HTML/CSS</span>
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">UI/UX</span>
                 </div>
             </article>
 
-            <article class="developer-card" style="background: #111111; border: 1px solid #222222; border-radius: 12px; padding: 25px; text-align: center;">
-                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #444; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
-                    <img src="images/dev2.jpg" alt="Theone Maree Zantua" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/150/222222/FFFFFF?text=TZ'">
+            <!-- Developer 2: Theone -->
+            <article class="developer-card" style="background: #111111; border: 1px solid #333333; border-radius: 12px; padding: 25px; text-align: center;">
+                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #555; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
+                    <img src="images/theone.jpg" alt="Theone Maree Zantua" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 5px;">Theone Maree Zantua</h3>
                 <p style="color: #aaaaaa; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Frontend Specialist & Media Manager</p>
                 <p style="color: #aaaaaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
                     Managed catalog image assets, video soundscape controls, responsive page layouts, and floating pill navigation.
                 </p>
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">Frontend</span>
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">Media Assets</span>
+                <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">Frontend</span>
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">Media Assets</span>
                 </div>
             </article>
 
-            <article class="developer-card" style="background: #111111; border: 1px solid #222222; border-radius: 12px; padding: 25px; text-align: center;">
-                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #444; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
-                    <img src="images/dev3.jpg" alt="Cassandra Berja" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/150/222222/FFFFFF?text=CB'">
+            <!-- Developer 3: Cassandra -->
+            <article class="developer-card" style="background: #111111; border: 1px solid #333333; border-radius: 12px; padding: 25px; text-align: center;">
+                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #555; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
+                    <img src="images/cassandra.jpg" alt="Cassandra Berja" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 5px;">Cassandra Berja</h3>
                 <p style="color: #aaaaaa; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Data Logic & Calculations Specialist</p>
                 <p style="color: #aaaaaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
                     Constructed the concession bundle pricing tables, automated student/senior discount engine, and subtotal cart formulas.
                 </p>
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">Data Logic</span>
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">Algorithms</span>
+                <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">Data Logic</span>
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">Algorithms</span>
                 </div>
             </article>
 
-            <article class="developer-card" style="background: #111111; border: 1px solid #222222; border-radius: 12px; padding: 25px; text-align: center;">
-                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #444; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
-                    <img src="images/dev4.jpg" alt="Christine Nicole Pe" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/150/222222/FFFFFF?text=CP'">
+            <!-- Developer 4: Christine -->
+            <article class="developer-card" style="background: #111111; border: 1px solid #333333; border-radius: 12px; padding: 25px; text-align: center;">
+                <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #555; margin: 0 auto 15px auto; overflow: hidden; background: #222;">
+                    <img src="images/christine.jpg" alt="Christine Nicole Pe" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 5px;">Christine Nicole Pe</h3>
                 <p style="color: #aaaaaa; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Quality Assurance & Geolocation Lead</p>
                 <p style="color: #aaaaaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
                     Implemented browser geolocation API branch detection, cross-browser testing, and local HTTP server compatibility.
                 </p>
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">Geolocation API</span>
-                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;">QA Testing</span>
+                <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">Geolocation API</span>
+                    <span style="background: #222; color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; border: 1px solid #444;">QA Testing</span>
                 </div>
             </article>
 
         </div>
     </main>
 
-    <footer class="subpage-footer">
-        <p>&copy; 2026 Cineplus. All Rights Reserved.</p>
+    <footer class="subpage-footer" style="text-align: center; padding: 20px; color: #777; font-size: 0.85rem;">
+        <p>&copy; 2026 Cineplus+. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
