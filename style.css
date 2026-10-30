@@ -463,3 +463,136 @@ body {
     padding: 8px 18px;
     border-radius: 50px;
 }
+
+/* Mobile Navigation Adjustments */
+@media screen and (max-width: 768px) {
+    .floating-nav-container {
+        top: 10px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pill-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 8px 15px;
+        gap: 8px;
+        width: 100%;
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+        /* Hide scrollbar for clean UI */
+        scrollbar-width: none; 
+    }
+
+    .pill-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links-wrapper {
+        display: flex;
+        gap: 6px;
+    }
+
+    .nav-item {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Responsive Grid Layout */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+        gap: 15px;
+    }
+
+    .page-container {
+        padding: 80px 15px 30px 15px; /* Offset for floating top header */
+    }
+}
+
+/* Seat Map Adjustments for Mobile */
+@media screen and (max-width: 500px) {
+    #seat-grid {
+        grid-template-columns: repeat(8, 1fr) !important;
+        gap: 4px !important;
+        max-width: 100% !important;
+    }
+
+    #seat-grid button {
+        padding: 6px 0 !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Enlarged Hero Brand Logo */
+.brand-logo-img {
+    height: 90px;          /* Increase this value to make it bigger (e.g., 90px to 120px) */
+    width: auto;           /* Maintains the natural aspect ratio so it doesn't stretch */
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;   /* Space between the logo and the CINEPLUS+ title */
+}
+
+.brand-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;             /* Space between logo image and text */
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* 1. Align hero text container strictly to the left */
+    .hero-content {
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        bottom: 120px !important; /* Position it above bottom elements */
+    }
+
+    /* 2. Align logo and title box to the left */
+    .brand-title-container {
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .brand-logo-img {
+        height: 55px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .movie-title {
+        font-size: 2.2rem !important;
+        text-align: left !important;
+    }
+
+    /* 3. Keep action buttons aligned to the left */
+    .action-buttons {
+        justify-content: flex-start !important;
+    }
+
+    /* 4. Fix bottom banner placement */
+    .bottom-scroll {
+        bottom: 15px !important;
+        left: 15px !important;
+        right: 15px !important;
+        width: auto !important;
+    }
+}
+
+
